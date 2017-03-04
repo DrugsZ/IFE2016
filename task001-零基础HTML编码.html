@@ -76,7 +76,7 @@
             <li>排名2</li>
             <li>排名3</li>
         </ol>
-        <p>i下面是一个表格，给表格加了一个border=“1”好让你看出是一个表格</p>
+        <p>下面是一个表格，给表格加了一个border=“1”好让你看出是一个表格</p>
         <table border="1">
             <tr>
                 <th>表头</th>
@@ -108,6 +108,36 @@
                 <td colspan="2">1000</td>
             </tr>
         </table>
+    </div>
+    <div>
+        <h2>这里以后是一个侧栏，这是侧栏的标题</h2>
+        <h2>侧栏注册窗口标题</h2>
+        <form action="#">
+            <p><label for="address">请输入邮箱地址：</label><input type="email" id="address" placeholder="这是一个文本输入框"></p>
+            <p>邮箱地址请按要求格式输入</p>
+            <p><label for="pd">请输入密码：</label><input type="password" id="pd" placeholder="这是一个文本输入框">
+                <label for="pd1">请重复输入密码：</label><input type="password" id="pd1"></p>
+            <p>密码请为6-16位英文数字</p>
+            <div>
+                <p>
+                    <span>性别：</span>
+                    <input type="radio" name="male" value="man" id="man"><label for="man">男</label>
+                    <input type="radio" name="male" value="woman" id="woman"><label for="woman">女</label>
+                    <span>城市：</span>
+                    <select name="city" id="city">
+                        <option value="bj">北京</option>
+                        <option value="sh">上海</option>
+                        <option value="cd">成都</option>
+                        <option value="hz">杭州</option>
+                    </select>
+                    <span>爱好：</span>
+                    <input type="checkbox" checked="checked" value="yd">运动
+                    <input type="checkbox" checked="checked" value="ys">艺术
+                    <input type="checkbox" checked="checked" value="kx">科学
+                </p>
+                <span>版权所有&copy;</span>
+            </div>
+        </form>
     </div>
 </body>
 </html>
