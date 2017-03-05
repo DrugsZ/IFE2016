@@ -68,11 +68,11 @@
             <p><span>好看的图片</span><br><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2138460373,2431522454&fm=58" alt="高圆圆"></p>
         </blockquote>
     </div>
-    <div class="content">
+    <div class="content footer">
         <h2>最后一篇文章一级标题</h2>
-        <h3>文章二级标题</h3>
-        <span>文章作者</span><span>文章发表时间</span>
-        <ol>
+        <h3 class="second">文章二级标题</h3>
+        <span class="author">文章作者</span><span class="time">文章发表时间</span>
+        <ol class="itemOl">
             <li>排名1</li>
             <li>排名2</li>
             <li>排名3</li>
@@ -104,41 +104,58 @@
                 <td>表内容单元格</td>
                 <td><a href="#">操作</a></td>
             </tr>
-            <tr>
+            <tr class="finally">
                 <td>总计</td>
                 <td colspan="2">1000</td>
             </tr>
         </table>
     </div>
-    <div class="content">
+    <div class="content cbl">
         <h2>这里以后是一个侧栏，这是侧栏的标题</h2>
-        <h3>侧栏注册窗口标题</h3>
-        <form action="#">
-            <p><label for="address">请输入邮箱地址：</label><input type="email" id="address" placeholder="这是一个文本输入框"></p>
-            <p>邮箱地址请按要求格式输入</p>
-            <p><label for="pd">请输入密码：</label><input type="password" id="pd" placeholder="这是一个文本输入框">
-                <label for="pd1">请重复输入密码：</label><input type="password" id="pd1"></p>
-            <p>密码请为6-16位英文数字</p>
-            <div>
-                <p>
-                    <span>性别：</span>
-                    <input type="radio" name="male" value="man" id="man"><label for="man">男</label>
-                    <input type="radio" name="male" value="woman" id="woman"><label for="woman">女</label>
-                    <span>城市：</span>
-                    <select name="city" id="city">
-                        <option value="bj">北京</option>
-                        <option value="sh">上海</option>
-                        <option value="cd">成都</option>
-                        <option value="hz">杭州</option>
-                    </select>
-                    <span>爱好：</span>
-                    <input type="checkbox" checked="checked" value="yd">运动
-                    <input type="checkbox" checked="checked" value="ys">艺术
-                    <input type="checkbox" checked="checked" value="kx">科学
-                    <input type="submit" value="确定提交">
-                </p>
+        <form action="">
+            <div class="itemCbl">
+                <label for="email1" class="tips">请输入邮箱地址:</label>
+                <input type="email" id="email1" placeholder="请输入邮箱地址">
+                <p class="tips2">邮箱地址请按照规定格式填写</p>
             </div>
+            <div class="itemCbl">
+                <label for="psd" class="tips">请输入密码:</label>
+                <input type="password" placeholder="请输入密码" id="psd">
+            </div>
+            <div class="itemCbl">
+                <label for="psd1" class="tips">请重复输入密码:</label>
+                <input type="password" placeholder="请输入密码" id="psd1">
+                <p class="tips2">密码请为6-16位英文数字</p>
+            </div>
+            <div class="itemCbl">
+                <label class="tips" >性别:</label>
+                <input type="radio"  name="male" value="man">男
+                <input type="radio"  name="male" value="woman">女
+            </div>
+            <div class="itemCbl">
+                <label  class="tips">城市:</label>
+                <select name="city" id="">
+                    <option value="bj">北京</option>
+                    <option value="hz">杭州</option>
+                    <option value="sh">上海</option>
+                    <option value="cd">成都</option>
+                </select>
+            </div>
+            <div class="itemCbl">
+                <label class="tips">爱好:</label>
+                <input type="checkbox" value="ah">爱好
+                <input type="checkbox" value="ys">艺术
+                <input type="checkbox" value="kx">科学
+            </div>
+            <div class="itemCbl">
+                <label for="grms" class="tips">个人描述:</label>
+                <textarea name="" id="grms" cols="30" rows="3"></textarea>
+            </div>
+            <input type="submit" value="确认提交" class="submit">
         </form>
-        <span>版权所有&copy; </span>
+    </div>
+    <div class="zuihou">
+        <p>版权所有&copy;</p>
+    </div>
 </body>
 </html>

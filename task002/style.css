@@ -62,9 +62,73 @@ body{
     list-style: none;
     padding-left:15px;
 }
+.image{
+    padding-left:20px;
+}
 .content .image p{
     border:1px solid #9f9f9f;
-    width:161px;
+    width:123px;
     margin:20px 0;
     padding:20px;
+}
+.itemOl{
+    padding-left: 35px;
+}
+.footer table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.footer table th{
+    background-color: #000100;
+    color:#ffffff;
+    text-align: center;
+}
+.footer .finally{
+    background: #cccccc;
+}
+.cbl  h2{
+    border-left:3px solid #cccccc;
+    width: 100%;
+    padding-left:10px;
+}
+.cbl .itemCbl{
+    margin:20px;
+    font-size:14px;
+}
+.tips{
+    width:35%;
+    float:left;
+    text-align: right;
+    padding-right:10px;
+}
+.tips2{
+    padding-left:10px;
+    margin-left:35%;
+    text-align: left;
+    opacity: .3;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+}
+.itemCbl textarea{
+    width:60%;
+    height:100px;
+}
+.submit{
+    width:100%;
+    font-size:20px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+    background:#3355d0;
+    color:#ffffff;
+    height:40px;
+    margin:0 auto;
+}
+.zuihou{
+    height:50px;
+    background: #000;
+    color:#ffffff;
+    text-align: center;
+    margin-top:30px;
+    line-height: 50px;
 }
