@@ -1,0 +1,46 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    padding:20px;
+}
+.main{
+    border:1px solid #999;
+    background:#eee;
+    padding:20px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.main img{
+    width:80px;
+    height:80px;
+}
+.bd{
+    border:1px solid #999;
+}
+.logo{
+    width:160px;
+    background: #ffffff;
+    padding:20px;
+    float:left;
+}
+.logo p{
+    float:right;
+    font-size:12px;
+}
+.itemRight{
+    width:120px;
+    float: right;
+    background: #ffffff;
+}
+.itemRight img{
+    display: block;
+    margin:20px;
+    width:80px;
+}
+ .middle{
+    margin-left:240px;
+     margin-right:160px;
+     background: #ffffff;
+ }
