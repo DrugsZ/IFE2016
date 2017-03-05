@@ -10,7 +10,7 @@ body{
     background:#eee;
     padding:20px;
     margin: 0 auto;
-    overflow: hidden;
+    overflow: auto;
 }
 .main img{
     width:80px;
