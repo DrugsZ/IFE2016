@@ -1,0 +1,70 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background: #dedede;
+    /*padding-left:30px;*/
+    /*padding-right:30px;*/
+    font-size:14px;
+}
+.content{
+    background: #ffffff;
+    box-shadow:2px 2px 5px #9f9f9f;
+    padding:20px;
+    width:90%;
+    margin:0 auto;
+    margin-top:30px;
+}
+.nav{
+    background:#333333;
+    width:100%;
+}
+.nav ul{
+    position: absolute;
+    right:10px;
+    top:0px;
+}
+.nav ul li{
+    float:left;
+    display:block;
+    padding:22px 10px;
+    list-style: none;
+}
+.nav ul li:hover{
+    border-bottom:1px solid red;
+    background:#474747;
+    border-radius: 3px;
+}
+.nav ul a{
+    color:#ffffff;
+    text-decoration: none;
+}
+.second{
+    filter:Alpha(opacity:50);
+    opacity:.5;
+    margin:10px 0px;
+}
+.author{
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+    opacity:.3;
+    line-height:30px;
+    margin-right:10px;
+}
+.time{
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+    opacity:.3;
+    line-height:30px;
+}
+.itemUl{
+    list-style: none;
+    padding-left:15px;
+}
+.content .image p{
+    border:1px solid #9f9f9f;
+    width:161px;
+    margin:20px 0;
+    padding:20px;
+}
