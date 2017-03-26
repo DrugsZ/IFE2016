@@ -1,0 +1,687 @@
+*{
+    padding:0;
+    margin:0;
+}
+header{
+    height:56px;
+    width:100%;
+    background: #2289be;
+}
+header .logo{
+    position:relative;
+    padding-top:10px;
+    padding-left:60px;
+    float: left;
+}
+header form{
+    float:right;
+    width:400px;
+    position: relative;
+    right:30px;
+    top:30%;
+}
+header form input{
+    height:26px;
+    width: 315px;
+    border-radius:20px;
+    border-style:none;
+    background: url("../image/search.png") no-repeat 1px #ffffff;
+    padding-left: 45px;
+}
+header form a{
+    text-decoration: none;
+    color:#ffffff;
+    font-size:12px;
+    display: inline-block;
+    margin-left:25px;
+    padding-left:15px;
+    width:40px;
+    background: url("../image/login.png") no-repeat 0 -5px;
+}
+.sidebar{
+    height:1213px;
+    width:18%;
+    background: #2a2e3d;
+    box-sizing: border-box;
+    padding-left: 40px;
+    float:left;
+}
+.sidebar .item1{
+    overflow: hidden;
+    height:80px;
+}
+.sidebar .roundBig{
+    width:60px;
+    height:60px;
+    border:1px solid #fff;
+    border-radius: 50%;
+    position:relative;
+    top:15px;
+    float:left;
+}
+.sidebar .roundBig .round{
+    width:54px;
+    height:54px;
+    background:#ffffff;
+    border-radius: 50%;
+    margin:3px auto;
+}
+.sidebar .tips{
+    float:left;
+    position:relative;
+    left:20px;
+    top:35px;
+    color: #fff;
+}
+.sidebar .item2{
+    position: relative;
+    overflow: hidden;
+    width:100%;
+    margin-left:-40px;
+}
+.sidebar .item2 .mes{
+    float:left;
+    width:50%;
+    color:#6e8095;
+    font-size:12px;
+    text-align: center;
+}
+.sidebar .item2 .mes-1{
+    border-right:1px solid #6e8095;
+    box-sizing: border-box;
+}
+.sidebar .item3, .sidebar .item4{
+    color:#ffffff;
+    font-size:14px;
+    line-height:30px;
+}
+.sidebar .item3 ul li, .sidebar .item4 ul li{
+    list-style-type:none;
+}
+.sidebar .item3 p,.sidebar .item4 ul li,.sidebar .item3 ul li p{
+    padding-left:20px;
+
+}
+.sidebar .item3 ul li{
+    padding-left:60px;
+}
+.sidebar .item3 .icon-1{
+    background: url("../image/icon_1.png") no-repeat 0 7px;
+}
+.sidebar .item3 .icon-2{
+    background: url("../image/icon_2.png")no-repeat 40px ,url("../image/yjt.png") no-repeat 25px ;
+}
+.sidebar .item3 .icon-3{
+    background:url("../image/icon_3.png") no-repeat 40px 7px,url("../image/xjt.png") no-repeat 25px 4px;
+}
+.sidebar .item3 .icon-3 .icon-4{
+    background: url("../image/icon_4.png") no-repeat 9px 10px;
+}
+.sidebar .item4 .icon-5{
+    background: url("../image/icon_6.png") no-repeat 10px;
+}
+.sidebar .item4 .icon-6{
+    background: url("../image/icon_7.png") no-repeat 8px ;
+}
+.sidebar .item4 .icon-7{
+    background: url("../image/icon_5.png") no-repeat 8px ;
+}
+.content{
+    float:left;
+    width:82%;
+    background: #ececec;
+    height:1213px;
+}
+.content #section-1{
+    font-size:14px;
+    color: #d9d9d9;
+    line-height:30px;
+    background: #fdfdfe;
+    box-sizing: border-box;
+    padding-left: 28px;
+}
+.content #section-1 span{
+    display: inline-block;
+    margin:0 7px;
+}
+.content #section-1 span:last-child{
+    color: #8fadcf;
+}
+.content .content-1{
+    width:90%;
+    margin:0 auto;
+}
+.content .content-1 #section-2{
+    width:100%;
+    background: #fdfdfe;
+    position: relative;
+    /*top:20px;*/
+    overflow: hidden;
+    margin-top:20px;
+    padding:15px 0 15px 20px;
+    box-sizing: border-box;
+}
+.content .content-1 #section-2 div{
+    float: left;
+    position: relative;
+}
+.content .content-1 #section-2 span{
+    display: inline-block;
+    color:#d9d9d9;
+    font-size:14px;
+    margin-right:7px;
+}
+.content .content-1 #section-2 form{
+    width:100%;
+}
+.content .content-1 #section-2 form .mes-1{
+    width: 200px;
+}
+.content .content-1 #section-2 form .mes-2{
+    width:300px;
+}
+.content .content-1 #section-2 form .mes-3{
+    width:350px;
+}
+.content .content-1 #section-2 #select-1,
+.content .content-1 #section-2 #select-4,
+.content .content-1 #section-2 #select-5{
+    width:70px;
+    height:25px;
+}
+.content .content-1 #section-2 #select-2,
+.content .content-1 #section-2 #select-3,
+.content .content-1 #section-2 #select-6,
+.content .content-1 #section-2 #input-1{
+    width:120px;
+    height:25px;
+    display: inline-block;
+}
+.content .content-1 #section-2 #select-3,
+.content .content-1 #section-2 #select-5,
+.content .content-1 #section-2 #select-6{
+    margin-top:10px;
+}
+.content .content-1 #section-2 .mes-2 span:last-child{
+    display: inline-block;
+    width:30px;
+    height:60px;
+    background: url("../image/pic_2.png") no-repeat;
+}
+.mp{
+    padding: 0 9px 0 0;
+}
+.content .content-1 #section-2 input[type="submit"]
+{
+    height:25px;
+    width:50px;
+    color: #ffffff;
+    background: #3889c1;
+    border-style: none;
+    position: relative;
+    top:20px;
+}
+.content .content-1 #section-3{
+    position: relative;
+    width:100%;
+    height:65px;
+    overflow: hidden;
+    margin-top:15px;
+}
+.content .content-1 #section-3 div{
+    float:left;
+    position: relative;
+    background: #ffffff;
+    height:65px;
+}
+.content .content-1 #section-3 div{
+    margin-right:10px;
+}
+.content .content-1 #section-3 .arrows{
+    width:35px;
+    position: relative;
+}
+.content .content-1 #section-3 .arrows:hover{
+    background: #ddd;
+}
+.content .content-1 #section-3 .arrows span{
+    height:10px;
+    width:10px;
+    display: inline-block;
+    position: absolute;
+    left:12px;
+    top:25px;
+    border:1px solid #b0319a;
+    border-top:transparent;
+    border-left:transparent;
+    transform: rotateZ(-45deg);
+}
+.content .content-1 #section-3 .arrows .left{
+    transform: rotateZ(135deg);
+}
+.content .content-1 #section-3 .item{
+    width:110px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 14px;
+    line-height:30px;
+}
+.content .content-1 #section-3 .item i{
+   width: 110px;
+    background: #3a6ea5;
+    height:4px;
+    position: absolute;
+    top:0;
+    left:0;
+    display: none;
+}
+.content .content-1 #section-3 .item:hover > i{
+    display: block;
+}
+.content .content-1 #section-3 .item p:nth-of-type(2){
+    font-size:18px;
+    color:orange;
+}
+.content .content-1 #section-3 .item p:nth-of-type(2) span{
+    font-size:16px;
+    color:#ddd;
+}
+.content .content-1 #section-3 .last{
+    width:170px;
+    margin:0;
+    float:right;
+    position:absolute;
+    right:0;
+    box-sizing: border-box;
+    background: url("../image/pic_1.png") no-repeat 10px  #ffffff;
+    padding-left:60px;
+    line-height:60px;
+    font-size:14px;
+}
+.content .content-1 #section-4{
+    width:100%;
+    position: relative;
+    margin-top: 20px;
+}
+.content .content-1 #section-4 p:first-child{
+    font-size:14px;
+}
+.content .content-1 #section-4 .item{
+    width:230px;
+    height:70px;
+    font-size:12px;
+    float:left;
+    margin-right:25px;
+    background:#ffffff;
+    box-sizing: border-box;
+    padding-left:15px;
+    border-left:3px solid #43b19e;
+    position: relative;
+}
+.content .content-1 #section-4 .item div:hover
+{
+    transform: translate3d(0px,-5px,0px);
+    box-shadow:0 5px 30px rgba(0,0,0,.5)
+}
+.content .content-1 #section-4 .item div{
+    position: absolute;
+    width:60px;
+    height:45px;
+    background: #43b19e;
+    right:20px;
+    top:13px;
+    transition: .5s;
+}
+.content .content-1 #section-4 .item p:first-child{
+    margin-top: 15px;
+    margin-bottom:5px;
+}
+.content .content-1 #section-4 .item:nth-of-type(4){
+    margin:0;
+}
+.content .content-1 #section-4 .item-2{
+    border-color:#3989c0;
+}
+.content .content-1 #section-4 .item-2 div{
+    background: #3989c0;
+}
+.content .content-1 #section-4 .item-3{
+    border-color:#ce4b36;
+}
+.content .content-1 #section-4 .item-3 div{
+    background: #ce4b36;
+}
+.content .content-1 #section-4 .item-4{
+    border-color: #e0cc46;
+}
+.content .content-1 #section-4 .item-4 div{
+    background: #e0cc46;
+}
+.content .content-1 #section-5,
+.content .content-1 #section-6{
+    height:380px;
+    width:100%;
+    position: relative;
+    overflow: hidden;
+    top:20px;
+}
+.content .content-1 #section-5 .item,
+.content .content-1 #section-6 .item{
+    height:100%;
+    border:1px solid #ddd;
+    border-radius:15px;
+    background: #ffffff;
+    float: left;
+}
+.content .content-1 #section-5 .item .title,
+.content .content-1 #section-6 .item .title{
+    width:100%;
+    height:36px;
+    font-size:14px;
+    background: #f3f4f6;
+    color: #d1d1d1;
+    line-height:36px;
+    box-sizing: border-box;
+    padding-left:20px;
+    border-bottom:1px solid #d0d0d0;
+}
+.content .content-1 #section-5 .itemL{
+    width:575px;
+    position: relative;
+    margin-right:16px;
+}
+.content .content-1 #section-5 .itemL .mes{
+    height:90%;
+    width:100%;
+    box-sizing: border-box;
+    padding:20px;
+}
+.content .content-1 #section-5 .itemL .mes ul{
+    width:100%;
+    height:80%;
+    border:1px solid #d0d0d0;
+    position: relative;
+    top:50px;
+    list-style: none;
+    border-radius: 5px;
+}
+.content .content-1 #section-5 .itemL .mes ul  li{
+    position: absolute;
+    width:400px;
+    height:180px;
+    left:50%;
+    margin-left: -200px;
+}
+.content .content-1 #section-5 .itemL input[type="radio"],
+.content .tips{
+    position: absolute;
+    width:80px;
+    height:28px;
+    top:-28px;
+    background: #ececee;
+    text-align: center;
+    font-size:14px;
+    line-height:28px;
+    border-radius: 5px;
+}
+.content .content-1 #section-5 .itemL input[type="radio"]{
+    opacity:0;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    z-index: 10;
+}
+.content .content-1 #section-5 .itemL .input-1,
+.content .content-1 #section-5 .itemL .tips-1{
+    left:-69px;
+}
+.content .content-1 #section-5 .itemL .input-2,
+.content .content-1 #section-5 .itemL .tips-2{
+    left:20px;
+}
+.content .content-1 #section-5 .itemL .input-3,
+.content .content-1 #section-5 .itemL .tips-3{
+    left:120px;
+}
+.content .content-1 #section-5 .itemL .input-4,
+.content .content-1 #section-5 .itemL .tips-4{
+    left:220px;
+}
+.content .content-1 #section-5 .itemL .input-5,
+.content .content-1 #section-5 .itemL .tips-5{
+    left:320px;
+}
+.content [name="item"]:checked~div{
+    background: #ffffff;
+    border:1px solid #d0d0d0;
+    border-bottom: transparent;
+}
+.content table{
+    position: absolute;
+    top:25px;
+    display:none;
+    border-collapse: collapse;
+    line-height:26px;
+    font-size:14px;
+}
+.content table td{
+    width:100px;
+    text-align: center;
+}
+.content [name="item"]:checked~[id^="tab_menu"]
+{
+    display: block;
+}
+.content .content-1 #section-5 .itemR{
+    width:400px;
+}
+.content #section-5 .itemR .mes{
+    height:90%;
+    box-sizing: border-box;
+    padding:20px 50px;
+}
+.content .content-1 #section-5 .itemR .mes .title-1{
+    font-size:12px;
+    line-height:22px;
+    padding-bottom:5px;
+    border-bottom:1px solid #c2c2c2;
+    color:#c2c2c2;
+    overflow: hidden;
+}
+.content .content-1 #section-5 .itemR .mes .title-1 p{
+    font-size:14px;
+    color: #000000;
+}
+.content .content-1 #section-5 .itemR .mes .title-1 .title_R{
+    display: inline-block;
+    float:left;
+    position: relative;
+    box-sizing: border-box;
+    border-left:1px solid #c2c2c2;
+    padding-left:15px;
+}
+.content .content-1 #section-5 .itemR .mes .title-1 .title_L{
+    display: inline-block;
+    float:left;
+    position: relative;
+    width:30%;
+}
+.content .content-1 #section-5 .itemR .mes .title_bottom{
+    height:150px;
+}
+.content .content-1 #section-5 .itemR .mes form{
+    font-size:12px;
+    color:#c2c2c2;
+    margin-top:5px;
+    line-height:30px;
+}
+.content .content-1 #section-5 .itemR .mes input[type="submit"]{
+    width:50px;
+    height:30px;
+    background: #388ac0;
+    border-style: none;
+    float:right;
+    color:#ffffff;
+    font-size:14px;
+}
+.content .content-1 #section-6{
+    margin-top:20px;
+}
+.content .content-1 #section-6 .item_L{
+    width:360px;
+    float:left;
+    margin-right:30px;
+}
+.content .content-1 #section-6 .item_L .mes{
+    height:90%;
+    width:100%;
+    box-sizing: border-box;
+    padding:10px 20px;
+}
+.content .content-1 #section-6 .item_L .mes .mes-1{
+    padding-bottom:10px;
+    overflow: hidden;
+    border-bottom:2px solid #3a6ea5;
+}
+.content .content-1 #section-6 .item_L .mes .mes-1 div{
+    float:left;
+    position:relative;
+    font-size:10px;
+    height:22px;
+    border:1px solid #9f9f9f;
+    line-height: 22px;
+    box-sizing: border-box;
+    padding-left:8px;
+}
+.content .content-1 #section-6 .item_L .mes .mes-1 div:nth-of-type(1){
+    width:65px;
+    margin-right:5px;
+}
+.content .content-1 #section-6 .item_L .mes .mes-1 div:nth-of-type(2){
+    width:85px;
+    margin-right:5px;
+}
+.content .content-1 #section-6 .item_L .mes .mes-1 div:nth-of-type(3){
+    width:75px;
+    margin-right:5px;
+}
+.content .content-1 #section-6 .item_L .mes .mes-1 div:nth-of-type(4){
+    width:75px;
+}
+.content .content-1 #section-6 .item_L .mes .mes-1 div::after{
+    content: '';
+    position: absolute;
+    width:0;
+    height:0;
+    border-top: 5px solid #dddddd;
+    border-right:3px solid transparent;
+    border-left:3px solid transparent;
+    top:9px;
+    right:3px;
+ }
+.content .content-1 #section-6 .item_L .mes .mes-2 li{
+    float:left;
+    position: relative;
+    list-style: none;
+    width:14%;
+    text-align: center;
+    line-height: 30px;
+    border-bottom:1px solid #ddd;
+    font-size:14px;
+    padding-bottom:2px;
+}
+.content .content-1 #section-6 .item_L .mes .mes-2::after{
+    content: "020";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.content .content-1 #section-6 .item_L .mes .mes-3 p{
+    float: left;
+    position: relative;
+    width:14.25%;
+    height:48px;
+    font-size:10px;
+    font-weight:normal;
+    text-align: center;
+}
+.content .content-1 #section-6 .item_L .mes .mes-3 p:hover{
+    border:1px solid #f6d056;
+    box-sizing: border-box;
+}
+.content .content-1 #section-6 .item_L .mes .mes-3 p span{
+    display: block;
+}
+.content .content-1 #section-6 .item_L .mes .mes-3 p:nth-child(7n) span,
+.content .content-1 #section-6 .item_L .mes .mes-3 p:nth-child(7n+6) span{
+    color:#cd3539;
+}
+.content .content-1 #section-6 .item_R{
+    width:600px;
+}
+.content .content-1 #section-6 .item_R .mes{
+    height:90%;
+    width:100%;
+    box-sizing: border-box;
+    padding:5px 25px;
+    position: relative;
+}
+.content .content-1 #section-6 .item_R .mes table{
+    display: block;
+    margin:0 auto;
+    font-size:10px;
+}.content .content-1 #section-6 .item_R .mes table td{
+    cursor: pointer;
+ }
+.content .content-1 #section-6 .item_R .mes table tr:hover{
+    background: #f2f3f5;
+}
+.content .content-1 #section-6 .item_R .mes table td,
+.content .content-1 #section-6 .item_R .mes table td{
+    width:105px;
+    text-align: center;
+}
+.content .content-1 #section-6 .item_R .mes table th:nth-of-type(3){
+    text-align: left;
+    width:310px;
+    padding-left: 30px;
+}
+.content .content-1 #section-6 .item_R .mes table td:nth-of-type(3){
+    text-align: left;
+    padding-left: 35px;
+    position: relative;
+}
+.content .content-1 #section-6 .item_R .mes table td:nth-of-type(3) div{
+    height:3px;
+    width:170px;
+    background: rgb(220, 220, 220);
+    position: absolute;
+    top:12px;
+    left:110px;
+}
+.dz{
+    width:140px;
+    height:100%;
+    background: rgb(236, 109, 81);
+}
+.ft{
+    width:120px;
+    background: rgb(236, 109, 81);
+    height:100%;
+}
+.ad{
+    height:100%;
+    width:100px;
+    background: rgb(236, 109, 81);
+}
+.bt{width:90px;}
+.fut{width:80px;}
+.bm{width:70px;}
+.xd{width:65px;}
+.qy{width:60px;}
+.bc{width:55px;}
+.bk{width: 51px;}
+.other{
+    height:100%;
+    background: rgb(127, 203, 239);
+}
