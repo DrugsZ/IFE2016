@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #queue{
+            height:130px;
+            margin-top:30px;
+            display: flex;
+            align-items: flex-end;
+            -webkit-align-items: flex-end;;
+        }
+        #queue li{
+            width:20px;
+            background: red;
+            margin:0 5px;
+            list-style: none;
+            display: inline-block;
+            bottom:0;
+        }
+    </style>
+</head>
+<body>
+<div id="control">
+    <input type="text" id="inner">
+    <input type="button" value="左侧入">
+    <input type="button" value="右侧入">
+    <input type="button" value="左侧出">
+    <input type="button" value="右侧出">
+    <input type="button" value="初始化">
+    <input type="button" value="排序">
+</div>
+<div>
+    <ul  id="queue">
+
+    </ul>
+</div>
+<script src="task.js"></script>
+</body>
+</html>

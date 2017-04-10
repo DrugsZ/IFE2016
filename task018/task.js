@@ -27,16 +27,20 @@ function renderData(){
 }
 //对各按钮进行事件注册
 addHandler(add_btn_left,'click',function(){
-    if(!isNaN(inner.value)){
-    getData.unshift(inner.value);
+     var num=parseInt(inner.value);
+    if(!isNaN(num)){
+    getData.unshift(num);
+    inner.value="";
     renderData();
     }else{
         alert("暂时只可输入数字，请确认后进行操作")
     }
 });
 addHandler(add_btn_right,'click',function(){
-    if(!isNaN(inner.value)){
-        getData.push(inner.value);
+    var num=parseInt(inner.value);
+    if(!isNaN(num)){
+        getData.push(num);
+        inner.value="";
         renderData();
     }else{
         alert("暂时只可输入数字，请确认后进行操作")
