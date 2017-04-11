@@ -73,7 +73,7 @@ function getWidth(width,len){
 }
 //根据高度的不同返回颜色，本来想法挺好，但是这个一个色域没找好，而且我发现貌似没多大关系，可是应该是有的，难道是我眼神有问题？
 function getColor(seed){
-    var number=12133217+seed;
+    var number=12133217+seed*100;
     var value=number.toString(16);
     return value;
 }

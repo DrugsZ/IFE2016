@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基础JavaScript练习（三）</title>
+
+    <style>
+        #wrapper span{
+            background: palevioletred;
+            display: inline-block;
+            color: #fff;
+            margin:10px;
+            padding:8px;
+        }
+        #wrapper span:hover{
+            cursor: pointer;
+        }
+         #wrapper .selected{
+            background: darkred;
+            color:yellow;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <textarea name="" id="input" cols="30" rows="10"></textarea>
+    <input type="button" id="add_data" value="插入">
+    <input type="button" id="search" value="搜索">
+    <input type="text" id="search_input">
+</div>
+<div id="wrapper">
+
+</div>
+<script>
+    var inputArr=document.getElementsByTagName('input');
+    var dataArr=[];
+    addHandler(inputArr[0],"click",message);
+    addHandler(inputArr[1],"click",function(){
+        var key=$("search_input").value.trim();
+        render(key);
+    });
+    function $(id){
+        return document.getElementById(id);
+    }
+    function addHandler(ele,event,handler){
+        if(ele.attachEvent){
+            ele.attachEvent("on"+event,handler);
+        }else if(ele.addEventListener){
+            ele.addEventListener(event,handler,false)
+        }else{
+            ele["on"+event]=handler;
+        }
+    }
+    function message(){
+        var data=$('input').value;
+        var tempArr=data.split(/[^0-9a-zA-Z\u4e00-\u9fa5]+/).filter(function(e) {
+            if(e!=null || e.length>0){
+                return true
+            }else{
+                return false;
+            }
+        });
+        dataArr=dataArr.concat(tempArr);
+        renderData();
+    }
+
+    function renderData(){
+        var htmlArr='';
+        var len=dataArr.length;
+        for(var i=0;i<len;i++){
+            var tempKey="<span>"+dataArr[i]+"</span>";
+            htmlArr+=tempKey;
+        }
+        var wrapper=$('wrapper');
+        wrapper.innerHTML=htmlArr;
+        del();
+    }
+
+    function del(){
+        var queue=$('wrapper');
+        var items=queue.childNodes;
+        var len=items.length;
+        for(var i=0;i<len;i++){
+            addHandler(items[i],'click',function(e){
+                queue.removeChild(e.target);
+            })
+        }
+    }
+    function render(key){
+        var items=$('wrapper').childNodes;
+        var searchKey=new RegExp(key,"g");
+        for(var i=0;i<items.length;i++){
+            if(searchKey.test(items[i].innerHTML))
+            {
+                items[i].className="selected";
+            }
+        }
+    }
+</script>
+</body>
+</html>
