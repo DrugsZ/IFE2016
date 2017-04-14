@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #tag_wrapper input,textarea{
+            width:300px;
+            height:60px;
+            border-radius: 25px;
+            border:1px solid #0093d1;
+            outline: none;
+        }
+        #hobby_wrapper{
+            margin-top:15px;
+        }
+        #hobby_wrapper input{
+            width:60px;
+            height:60px;
+            border: 1px solid #0093d1;
+            border-radius: 50%;
+            outline:none;
+            background: #ffffff;
+        }
+        #hobby_wrapper input:hover{
+            background:#0093d1;
+            color:#fff;
+        }
+        #hobby_queue div,#tag_queue div{
+            background: #0093d1;
+            color:#fff;
+            width:150px;
+            height:150px;
+            display:inline-block;;
+            border-radius:50%;
+            text-align: center;
+            line-height:150px;
+            overflow: hidden;
+        }
+        #hobby_queue div:hover,#tag_queue div:hover{
+            background: #d1d15e;
+        }
+    </style>
+</head>
+<body>
+<div id="tag_wrapper">
+    <input type="text" id="tag" placeholder="tag">
+    <div id="tag_queue"></div>
+</div>
+<div id="hobby_wrapper">
+    <textarea name="" id="hobby" cols="30" rows="10"></textarea>
+    <input type="button" id="hobby_Btn" value="提交">
+    <div id="hobby_queue"></div>
+</div>
+<script src="task.js"></script>
+</body>
+</html>
