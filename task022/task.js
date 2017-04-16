@@ -32,21 +32,21 @@ function selectChange(){
 function preOrder(ele){
         if(ele){
             data.push(ele);
-            preOrder(ele.firstElementChild);
-            preOrder(ele.lastElementChild);
+            arguments.callee(ele.firstElementChild);
+            arguments.callee(ele.lastElementChild);
         }
     }
 function inOrder(ele){
         if(ele){
-            inOrder(ele.firstElementChild);
+            arguments.callee(ele.firstElementChild);
             data.push(ele);
-            inOrder(ele.lastElementChild);
+            arguments.callee(ele.lastElementChild);
         }
     }
 function postOrder(ele){
         if(ele){
-            postOrder(ele.firstElementChild);
-            postOrder(ele.lastElementChild);
+            arguments.callee(ele.firstElementChild);
+            arguments.callee(ele.lastElementChild);
             data.push(ele);
         }
 }
