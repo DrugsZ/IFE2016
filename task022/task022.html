@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js与树1</title>
+    <style>
+        .control{
+            text-align: center;;
+        }
+        .wrapper{
+            display: flex;;
+            justify-content: space-around;
+            border:1px solid #5a5b5b;
+        }
+        .parent{
+            height:260px;
+            padding: 20px;
+            width:900px;
+            margin:0 auto;
+            position: relative;
+            top:200px;
+        }
+        .child_1{
+            height:220px;
+            padding:20px;
+            width:390px;
+        }
+        .child_2{
+            height:180px;
+            padding:20px;
+            width:130px;
+        }
+        .child_3{
+            height:180px;
+            width:50px;
+            border: 1px solid #5a5b5b;
+        }
+    </style>
+</head>
+<div class="control">
+    <select name="" id="select">
+        <option value="前序遍历">前序遍历</option>
+        <option value="中序遍历">中序遍历</option>
+        <option value="后序遍历">后序遍历</option>
+    </select>
+    <input type="button" value="开始遍历" id="button">
+</div>
+<body>
+    <div class="wrapper parent" id="wrapper">
+        <div class="wrapper child_1">
+            <div class="wrapper child_2">
+                <div class="child_3"></div>
+                <div class="child_3"></div>
+            </div>
+            <div class="wrapper child_2">
+                <div class="child_3"></div>
+                <div class="child_3"></div>
+            </div>
+        </div>
+        <div class="wrapper child_1 ">
+            <div class="wrapper child_2">
+                <div class="child_3"></div>
+                <div class="child_3"></div>
+            </div>
+            <div class="wrapper child_2">
+                <div class="child_3"></div>
+                <div class="child_3"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="task.js"></script>
+</html>
