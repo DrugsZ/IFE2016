@@ -12,12 +12,26 @@
             background-color: #fff;
             color: #000;
         }
+        .control{
+            text-align: center;
+            margin:0 auto;
+            border:none;
+        }
+        .control input{
+            margin:0 auto;
+        }
     </style>
 </head>
 <body>
-<input type="button" id="search" value="遍历">
-<section  id="wrapper">
-    <div>Super
+<div class="control">
+    <input type="button" id="parseTree_button" value="深度优先遍历">
+    <input type="button" id="levelOrderTraversal_button" value="广度优先遍历">
+    <input type="text" id="input" placeholder="请输入搜索值">
+    <input type="button" id="parseTree_button_search" value="深度优先搜索">
+    <input type="button" id="levelOrderTraversal_button_search" value="广度优先搜索">
+</div>
+<section>
+    <div id="wrapper">Super
         <div>Cat
             <div>Apple
                 <div>Pear</div>

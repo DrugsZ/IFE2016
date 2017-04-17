@@ -6,6 +6,7 @@ var pageStateChange={
 };
 var button=$("#button");
 var wrapper=$("#wrapper");
+var timer=null;
 //获取元素
 function $(type){
     return document.querySelector(type);
@@ -52,6 +53,9 @@ function postOrder(ele){
 }
 //修改颜色函数
 function colorChange(data){
+    for(var k=0;k<data.length;k++){
+        data[k].style.backgroundColor="#fff";
+    }
     var i = 0;
     data[i].style.backgroundColor = 'pink';
     timer = setInterval(function () {
@@ -67,6 +71,7 @@ function colorChange(data){
 }
 function init(){
     data=[];
+    clearInterval(timer);
     selectChange();
     switch (pageStateChange.stateSelect){
         case "前序遍历":
