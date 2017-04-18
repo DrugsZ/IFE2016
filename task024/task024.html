@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            float: left;
+            padding: 20px;
+            margin: 10px;
+            border: 1px solid #000;
+            background-color: #fff;
+            color: #000;
+        }
+        .control{
+            text-align: center;
+            margin:0 auto;
+            border:none;
+        }
+        .control input{
+            margin:0 auto;
+        }
+    </style>
+</head>
+<body>
+<div class="control">
+    <input type="button" id="parseTree_button" value="深度优先遍历">
+    <input type="button" id="levelOrderTraversal_button" value="广度优先遍历">
+    <input type="text" id="input" placeholder="请输入搜索值">
+    <input type="button" id="parseTree_button_search" value="深度优先搜索">
+    <input type="button" id="levelOrderTraversal_button_search" value="广度优先搜索">
+    <input type="text" id="nodeValue" placeholder="请输入将添加节点的值">
+    <input type="button" value="添加节点" id="addNode">
+    <input type="button" value="删除节点" id="delNode">
+</div>
+<section>
+    <div id="wrapper">Super
+        <div>Cat
+            <div>Apple
+                <div>Pear</div>
+                <div>Pig</div>
+                <div>Cola</div>
+                <div>Soccer</div>
+            </div>
+            <div>
+                phone
+            </div>
+            <div>
+                <div>Book</div>
+                <div>School</div>
+            </div>
+        </div>
+        <div>
+            Note
+            <div>Human
+                <div>Code</div>
+                <div>Operote</div>
+                <div>Man</div>
+            </div>
+            <div>Program
+                <div>Element
+                    <div>Cat</div>
+                </div>
+                <div>Glass</div>
+            </div>
+        </div>
+        <div>Fish</div>
+    </div>
+</section>
+<script src="task.js"></script>
+</body>
+</html>
