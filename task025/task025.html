@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .wrapper{
+            width:500px;
+            margin:0 auto;
+            padding:30px;
+            border:1px solid #d6d6d6;
+        }
+        #control{
+           text-align: center;
+        }
+        .nodeChild{
+            margin:10px;
+            padding:10px;
+        }
+        .toShow{
+            display:block;
+        }
+        .toHidden{
+            display: none;
+        }
+        .title:hover{
+            color: red;
+            cursor:pointer;
+        }
+        .arrow{
+            height:0;
+            width:0;
+            display: inline-block;
+            cursor:pointer;
+        }
+        .right_arrow{
+            border-left:10px solid #5a5b5b;
+            border-top:5px solid transparent;
+            border-bottom:5px solid transparent;
+        }
+        .down_arrow{
+            border-top:10px solid #5a5b5b;
+            border-right: 5px solid transparent;
+            border-left: 5px solid transparent;
+        }
+        .addIcon,.delIcon{
+            margin-left:5px;
+            display: none;
+        }
+        .addIcon:hover,.delIcon:hover{
+            cursor: pointer;
+            color:red;
+        }
+        .nodeHeader:hover>.addIcon,.nodeHeader:hover>.delIcon{
+            display: inline-block;
+        }
+    </style>
+</head>
+<div class="wrapper">
+    <div id="control">
+        <input type="text" id="query">
+        <input type="button" id="search_button" value="开始搜索">
+    </div>
+    <div class="content">
+        <div class="nodeChild">
+            <label class="nodeHeader">
+                <span class="arrow right_arrow"></span>
+                <span class="title">JavaScript</span>
+                <span class="addIcon">添加</span>
+                <span class="delIcon">删除</span>
+            </label>
+        </div>
+    </div>
+</div>
+<script src="task.js"></script>
+</body>
+</html>

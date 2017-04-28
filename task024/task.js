@@ -49,7 +49,7 @@ function levelOrderTraversal(e){
     while (tempArray.length!==0){
         node=tempArray.shift();
         data.push(node);
-        if(node.children.length>-1){
+        if(node.children.length>0){
             for(var i=0;i<node.children.length;i++){
                 var tempKey=node.children[i];
                 tempArray.push(tempKey);
