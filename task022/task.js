@@ -29,7 +29,7 @@ function selectChange(){
         pageStateChange.stateSelect=value;
     }
 }
-//线序遍历
+//先序遍历
 function preOrder(ele){
         if(ele){
             data.push(ele);
