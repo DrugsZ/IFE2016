@@ -112,7 +112,7 @@ function init() {
     var msgArray = oMsg.getArray();
     var tempArray = [];
     for (var i = 0; i < 6; i++) {
-        var tempElement = msgArray.splice(Math.round(Math.random() * msgArray.length), 1)[0];
+        var tempElement = msgArray.splice(Math.round(Math.random() * msgArray.length - 1), 1)[0];
         tempArray.push(tempElement);
     }
     for (var k = 0; k < tempArray.length; k++) {
