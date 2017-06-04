@@ -1,0 +1,46 @@
+section{
+    width:450px;
+    height:450px;
+    position: relative;
+    margin:0 auto;
+}
+table{
+    margin:0 auto;
+    border-collapse:collapse;
+}
+div,td{
+    margin:0;
+    padding:0;
+}
+td{
+    width:40px;
+    height:40px;
+    text-align: center;
+    box-sizing: border-box;
+}
+tr:nth-of-type(n+2)>td:nth-of-type(n+2){
+    border:1px solid #cccccc;
+}
+.car{
+    background: red;
+    width:40px;
+    height:40px;
+    position: absolute;
+    top:40px;
+    left:45px;
+}
+.car>span{
+    width:100%;
+    display: inline-block;;
+    height:20%;
+    background: blue;
+    position: absolute;
+    top:0;
+    left:0;
+}
+#msg{
+    display: inline-block;
+    width:180px;
+    margin-top:15px;
+    margin-left:100px;
+}
