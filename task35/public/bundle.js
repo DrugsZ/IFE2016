@@ -136,6 +136,7 @@ var execBtn=document.querySelector('#execute');
 var refreshBtn=document.querySelector('#refresh');
 refreshBtn.addEventListener('click',function(){
     textarea.value='';
+    setRowList(0);
 },false);
 execBtn.addEventListener('click',function(){
     execute();
@@ -364,7 +365,7 @@ function setColor(type,num){
             command.dir=direction;
         }
         if (self.seat.x + self.status[command.dir].x * command.num> 9 || self.seat.x + self.status[command.dir].x * command.num < 0 || self.seat.y + self.status[command.dir].y * command.num > 9 || self.seat.y + self.status[command.dir].y * command.num< 0) {
-            console.log('cuowu ')
+            console.log('无法移动到指定位置，请确认无误 ')
             return false;
         } else {
             switch (command.way) {

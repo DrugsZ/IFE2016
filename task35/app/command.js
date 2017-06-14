@@ -11,6 +11,7 @@ var execBtn=document.querySelector('#execute');
 var refreshBtn=document.querySelector('#refresh');
 refreshBtn.addEventListener('click',function(){
     textarea.value='';
+    setRowList(0);
 },false);
 execBtn.addEventListener('click',function(){
     execute();
