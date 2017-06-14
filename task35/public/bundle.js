@@ -71,7 +71,7 @@
  * Created by DrugsZ on 2017/6/8.
  */
 var init = __webpack_require__(1);
-var CreateCar=__webpack_require__(2);
+var command=__webpack_require__(2);
 
 /***/ }),
 /* 1 */
@@ -110,6 +110,7 @@ var init = function () {
     var oWrapperRight=document.createElement('div');
     oWrapperRight.className='right';
     var oDiv=document.createElement('div');
+    oDiv.className='rowlist';
     var oText = document.createElement('textarea');
     oWrapperRight.appendChild(oDiv);
     oWrapperRight.appendChild(oText);
@@ -120,76 +121,270 @@ init();
 
 /***/ }),
 /* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * Created by DrugsZ on 2017/6/10.
+ */
+var CreateCar=__webpack_require__(3);
+CreateCar.CreateNewCar();
+var textarea=document.querySelector('textarea');
+var rowList=document.querySelector('.rowlist');
+var value=textarea.value;
+var arr=value.split('\n');
+var execBtn=document.querySelector('#execute');
+var refreshBtn=document.querySelector('#refresh');
+refreshBtn.addEventListener('click',function(){
+    textarea.value='';
+},false);
+execBtn.addEventListener('click',function(){
+    execute();
+},false);
+textarea.addEventListener('keydown',function(){
+    getData();
+},false);
+var commandTest= {
+    GO: /^go(\s+)?(\d+)?$/i,
+    TRA: /^tra\s+(bac|lef|top|rig)(\s+)?(\w+)?$/i,
+    MOV: /^mov\s+(bac|lef|top|rig)(\s+)?(\w+)?$/i
+};
+
+function execute(){
+    var i=0;
+    arr=getData();
+    timer=setInterval(function(){
+        if(i>=arr.length-1){
+            clearInterval(timer);
+        }
+        run(arr[i],i);
+        i++
+    },1000)
+}
+function run(msg,i){
+    var command=getCommand(msg,i);
+    if(!command){
+        return false;
+    }
+    var isFalse=CreateCar.receive(command);
+    setColor('select',i);
+    if(!isFalse){
+        clearInterval(timer);
+        setColor('error',i);
+        return false;
+    }
+}
+function getCommand(msg,i){
+    var arr=[];
+    var command={};
+    var msg=msg.toUpperCase();
+    if(msg.match(commandTest.GO)){
+        arr=msg.match(commandTest.GO);
+        arr.shift();
+        if(!isNaN(arr[arr.length-1])) {
+            command = CreateCommand('GO', arr[arr.length-1])
+        }else{
+            command=CreateCommand('GO',1)
+        }
+    }else if(msg.match(commandTest.TRA)){
+        arr=msg.match(commandTest.TRA);
+        arr.shift();
+        if(!isNaN(arr[arr.length-1])) {
+            command = CreateCommand('TRA',arr[0], arr[arr.length-1])
+        }else{
+            command=CreateCommand('TRA',arr[0],1)
+        }
+    }else  if(msg.match(commandTest.MOV)){
+        arr=msg.match(commandTest.MOV);
+        arr.shift();
+        if(!isNaN(arr[arr.length-1])) {
+            command = CreateCommand('MOV',arr[0], arr[arr.length-1])
+        }else{
+            command=CreateCommand('MOV',arr[0],1)
+        }
+    }else {
+        command=null;
+    }
+    if(command==null){
+        console.log('指令有误，请确认后重新操作');
+        clearInterval(timer);
+        return false;
+    }else{
+        return command;
+    }
+}
+function CreateCommand(){
+    var command={};
+    if(arguments.length==2){
+        command.way=arguments[0];
+        command.num=arguments[1];
+    }else if(arguments.length==3){
+        command.way=arguments[0];
+        command.dir=arguments[1];
+        command.num=arguments[2];
+    }
+    return command;
+}
+function setRowList(num){
+    var rowlist=document.querySelector('.rowlist');
+    var i=rowlist.childNodes.length;
+    var tempArr='';
+    if(i==num){
+        return false;
+    }else{
+        for(var j=0;j<num;j++){
+            tempArr+='<div><span>'+(j+1)+'</span></div>';
+        }
+    }
+    rowlist.innerHTML=tempArr;
+}
+function getData(){
+        value=document.querySelector('textarea').value;
+        arr=value.split('\n');
+        setRowList(arr.length);
+         return arr;
+}
+function setColor(type,num){
+    var arr=rowList.childNodes;
+    for(var i=0;i<arr.length;i++){
+        arr[i].className='';
+    }
+    if(type=='select'){
+        arr[num].className='selectIndex';
+    }else if(type=='error'){
+        arr[num].className='error';
+    }
+}
+
+
+/***/ }),
+/* 3 */
 /***/ (function(module, exports) {
 
 /**
  * Created by DrugsZ on 2017/6/7.
  */
-function CreateCar(){
-    this.direction='top';
-    this.deg=0;
-    this.Element=null;
-    this.seat={
-        x:0,
-        y:0
-    };
-    this.status={
-        top: {x: 0, y: -1},
-        right: {x: 1, y: 0},
-        under: {x: 0, y: 1},
-        left: {x: -1, y: 0}
-    }
-}
-CreateCar.constructor=CreateCar;
-CreateCar.prototype.getDirevtion=function(){
-    var deg = this.deg % 360;
-    if (deg === 0) {
-        this.direction = 'top'
-    } else if (deg === 90) {
-        this.direction = 'right'
-    } else if (deg === 180) {
-        this.direction = 'under';
-    } else if (deg === 270) {
-        this.direction = 'left'
-    }
-    return this.direction;
-};
-CreateCar.prototype.GO=function(obj,n){
-    var self=this;
-    if(this.seat.x+obj.x*n>9||this.seat.x+obj.x*n<0||this.seat.y+obj.y*n>9||this.seat.y+obj.y*n<0){
-        return false;
-    }else{
-        loopGO(obj,n);
-    }
-    function go(obj){
-        var a=this;
-        var top = self.Element.offsetTop;
-        var left = self.Element.offsetLeft;
-        self.seat.x+=obj.x;
-        self.seat.y+=obj.y;
-        left=left+obj*40;
-        top=top+obj.y*40;
-        self.Element.style.left=left+'px';
-        self.Element.style.top=top+'px';
-    }
-    function loopGO(obj,n){
-        for(var i=0;i<n;i++){
-            go(obj);
+    function CreateCar() {
+        self = this;
+        this.direction = 'TOP';
+        this.deg = 0;
+        this.Element = null;
+        this.seat = {
+            x: 0,
+            y: 0
+        };
+        this.status = {
+            TOP: {x: 0, y: -1},
+            RIG: {x: 1, y: 0},
+            BAC: {x: 0, y: 1},
+            LEF: {x: -1, y: 0}
         }
     }
-};
-CreateCar.prototype.CreateNewCar=function(){
-    var sec=document.querySelector('section');
-    var oDiv=document.createElement('div');
-    oDiv.className='car';
-    var oImg=document.createElement('img');
-    oImg.src='bot.png';
-    oDiv.appendChild(oImg);
-    sec.appendChild(oDiv);
-    this.Element=oDiv;
-}
-var Car= new CreateCar();
-Car.CreateNewCar();
+
+    CreateCar.constructor = CreateCar;
+    CreateCar.prototype.getDirevtion = function () {
+        var deg = this.deg % 360;
+        if (deg === 0) {
+            this.direction = 'TOP'
+        } else if (deg === 90) {
+            self.direction = 'RIG';
+        } else if (deg === 180) {
+            self.direction = 'BAC';
+        } else if (deg === 270) {
+            self.direction = 'LEF'
+        }
+        return this.direction;
+    };
+    CreateCar.prototype.GO = function (dir, n) {
+        var offtop = self.Element.offsetTop;
+        var offleft = self.Element.offsetLeft;
+        var left = offleft;
+        var top = offtop;
+        function go(dir) {
+            var a = this;
+            self.seat.x += self.status[dir].x;
+            self.seat.y += self.status[dir].y;
+            left = left + self.status[dir].x * 40;
+            top = top + self.status[dir].y * 40;
+            self.Element.style.left = left + 'px';
+            self.Element.style.top = top + 'px';
+        }
+
+        function loopGO(dir, n) {
+            for (var i = 0; i < n; i++) {
+                go(dir);
+            }
+        }loopGO(dir,n);
+    };
+    CreateCar.prototype.getDirection = function () {
+        var deg = this.deg % 360;
+        if (deg === 0) {
+            self.direction = 'TOP'
+        } else if (deg === 90) {
+            self.direction = 'RIG'
+        } else if (deg === 180) {
+            self.direction = 'BAC';
+        } else if (deg === 270) {
+            self.direction = 'LEF'
+        }
+        return self.direction;
+    };
+    CreateCar.prototype.CreateNewCar = function () {
+        var sec = document.querySelector('section');
+        var oDiv = document.createElement('div');
+        oDiv.style.transition = '1s';
+        oDiv.className = 'car';
+        var oImg = document.createElement('img');
+        oImg.src = 'bot.png';
+        oImg.style.transform='rotate('+180+'deg)';
+        oDiv.appendChild(oImg);
+        sec.appendChild(oDiv);
+        self.Element = oDiv;
+    };
+    CreateCar.prototype.turn = function (dir) {
+        switch (dir) {
+            case 'LEF':
+                self.deg = -90;
+                break;
+            case 'RIG':
+                self.deg = 90;
+                break;
+            case 'BAC':
+                self.deg = 180;
+                break;
+            case 'TOP':
+                self.deg = 0;
+                break;
+        }
+        self.Element.style.transform = 'rotate(' +self.deg + 'deg)' ;
+        //this.Element.style.transform = 'rotate(' + this.deg + 'deg)';
+    };
+    CreateCar.prototype.receive = function (command) {
+        var direction = self.getDirevtion();
+        if(command.dir==null){
+            command.dir=direction;
+        }
+        if (self.seat.x + self.status[command.dir].x * command.num> 9 || self.seat.x + self.status[command.dir].x * command.num < 0 || self.seat.y + self.status[command.dir].y * command.num > 9 || self.seat.y + self.status[command.dir].y * command.num< 0) {
+            console.log('cuowu ')
+            return false;
+        } else {
+            switch (command.way) {
+                case 'GO':
+                    self.GO(direction, command.num);
+                    break;
+                case 'TRA':
+                    self.GO(command.dir, command.num);
+                    break;
+                case 'MOV':
+                    self.turn(command.dir);
+                    self.GO(command.dir, command.num)
+            }
+            return true;
+        }
+    };
+    var Car=new CreateCar();
+    module.exports.CreateNewCar=Car.CreateNewCar;
+    module.exports.receive=Car.receive;
+
 
 /***/ })
 /******/ ]);
