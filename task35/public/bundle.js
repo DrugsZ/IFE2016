@@ -283,14 +283,14 @@ function setColor(type,num){
 
     CreateCar.constructor = CreateCar;
     CreateCar.prototype.getDirevtion = function () {
-        var deg = this.deg % 360;
+        var deg = this.deg ;
         if (deg === 0) {
             this.direction = 'TOP'
         } else if (deg === 90) {
             self.direction = 'RIG';
         } else if (deg === 180) {
             self.direction = 'BAC';
-        } else if (deg === 270) {
+        } else if (deg === -90) {
             self.direction = 'LEF'
         }
         return this.direction;
@@ -317,14 +317,14 @@ function setColor(type,num){
         }loopGO(dir,n);
     };
     CreateCar.prototype.getDirection = function () {
-        var deg = this.deg % 360;
+        var deg = this.deg ;
         if (deg === 0) {
             self.direction = 'TOP'
         } else if (deg === 90) {
             self.direction = 'RIG'
         } else if (deg === 180) {
             self.direction = 'BAC';
-        } else if (deg === 270) {
+        } else if (deg === -90) {
             self.direction = 'LEF'
         }
         return self.direction;
