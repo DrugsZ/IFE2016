@@ -83,9 +83,9 @@ var command=__webpack_require__(2);
 var init = function () {
     var sec = document.querySelector('section');
     var oTable = document.createElement('table');
-    for (var i = 0; i < 11; i++) {
+    for (var i = 0; i < 21; i++) {
         var oTr = document.createElement('tr');
-        for (var j = 0; j < 11; j++) {
+        for (var j = 0; j < 21; j++) {
             var oTd = document.createElement('td');
             oTr.appendChild(oTd);
         }
