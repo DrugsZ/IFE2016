@@ -111,6 +111,9 @@ var init = function () {
     oWrapperRight.className='right';
     var oDiv=document.createElement('div');
     oDiv.className='rowlist';
+    var oWrapper=document.createElement('div');
+    oWrapper.className='wrapper';
+    oDiv.appendChild(oWrapper);
     var oText = document.createElement('textarea');
     oWrapperRight.appendChild(oDiv);
     oWrapperRight.appendChild(oText);
@@ -129,20 +132,22 @@ init();
 var CreateCar=__webpack_require__(3);
 CreateCar.CreateNewCar();
 var textarea=document.querySelector('textarea');
-var rowList=document.querySelector('.rowlist');
+var rowList=document.querySelector('.wrapper');
 var value=textarea.value;
+var timer=null;
 var arr=value.split('\n');
 var execBtn=document.querySelector('#execute');
 var refreshBtn=document.querySelector('#refresh');
-refreshBtn.addEventListener('click',function(){
-    textarea.value='';
-    setRowList(0);
-},false);
+tTimer=setInterval(getData,500);
 execBtn.addEventListener('click',function(){
+
     execute();
 },false);
 textarea.addEventListener('keydown',function(){
     getData();
+},false);
+textarea.addEventListener('scroll',function(){
+    rowList.style.top=-textarea.scrollTop+'px';
 },false);
 var commandTest= {
     GO: /^go(\s+)?(\d+)?$/i,
@@ -151,6 +156,7 @@ var commandTest= {
 };
 
 function execute(){
+    clearInterval(timer);
     var i=0;
     arr=getData();
     timer=setInterval(function(){
@@ -163,6 +169,7 @@ function execute(){
 }
 function run(msg,i){
     var command=getCommand(msg,i);
+    var msg=msg.trim();
     if(!command){
         return false;
     }
@@ -227,7 +234,7 @@ function CreateCommand(){
     return command;
 }
 function setRowList(num){
-    var rowlist=document.querySelector('.rowlist');
+    var rowlist=document.querySelector('.wrapper');
     var i=rowlist.childNodes.length;
     var tempArr='';
     if(i==num){
@@ -247,6 +254,10 @@ function getData(){
 }
 //type:select,error
 function setColor(type,num){
+    if(num>27&&rowList.childNodes.length-num>27){
+        rowList.style.top=-rowList.childNodes[0].clientHeight*num+'px';
+        textarea.scrollTop=-(rowList.offsetTop);
+    }
     var arr=rowList.childNodes;
     for(var i=0;i<arr.length;i++){
         arr[i].className='';
@@ -267,6 +278,7 @@ function setColor(type,num){
  * Created by DrugsZ on 2017/6/7.
  */
     function CreateCar() {
+        this.count=20;
         self = this;
         this.direction = 'TOP';
         this.deg = 0;
@@ -306,8 +318,8 @@ function setColor(type,num){
             var a = this;
             self.seat.x += self.status[dir].x;
             self.seat.y += self.status[dir].y;
-            left = left + self.status[dir].x * 40;
-            top = top + self.status[dir].y * 40;
+            left = left + self.status[dir].x * self.cH;
+            top = top + self.status[dir].y * self.cH;
             self.Element.style.left = left + 'px';
             self.Element.style.top = top + 'px';
         }
@@ -342,6 +354,7 @@ function setColor(type,num){
         oDiv.appendChild(oImg);
         sec.appendChild(oDiv);
         self.Element = oDiv;
+        self.cH=self.Element.clientHeight;
     };
     CreateCar.prototype.turn = function (dir) {
         switch (dir) {
@@ -366,7 +379,7 @@ function setColor(type,num){
         if(command.dir==null){
             command.dir=direction;
         }
-        if (self.seat.x + self.status[command.dir].x * command.num> 9 || self.seat.x + self.status[command.dir].x * command.num < 0 || self.seat.y + self.status[command.dir].y * command.num > 9 || self.seat.y + self.status[command.dir].y * command.num< 0) {
+        if (self.seat.x + self.status[command.dir].x * command.num> self.count-1 || self.seat.x + self.status[command.dir].x * command.num < 0 || self.seat.y + self.status[command.dir].y * command.num > self.count-1 || self.seat.y + self.status[command.dir].y * command.num< 0) {
             console.log('无法移动到指定位置，请确认无误 ')
             return false;
         } else {

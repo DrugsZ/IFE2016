@@ -2,6 +2,7 @@
  * Created by DrugsZ on 2017/6/7.
  */
     function CreateCar() {
+        this.count=20;
         self = this;
         this.direction = 'TOP';
         this.deg = 0;
@@ -41,8 +42,8 @@
             var a = this;
             self.seat.x += self.status[dir].x;
             self.seat.y += self.status[dir].y;
-            left = left + self.status[dir].x * 40;
-            top = top + self.status[dir].y * 40;
+            left = left + self.status[dir].x * self.cH;
+            top = top + self.status[dir].y * self.cH;
             self.Element.style.left = left + 'px';
             self.Element.style.top = top + 'px';
         }
@@ -77,6 +78,7 @@
         oDiv.appendChild(oImg);
         sec.appendChild(oDiv);
         self.Element = oDiv;
+        self.cH=self.Element.clientHeight;
     };
     CreateCar.prototype.turn = function (dir) {
         switch (dir) {
@@ -101,7 +103,7 @@
         if(command.dir==null){
             command.dir=direction;
         }
-        if (self.seat.x + self.status[command.dir].x * command.num> 9 || self.seat.x + self.status[command.dir].x * command.num < 0 || self.seat.y + self.status[command.dir].y * command.num > 9 || self.seat.y + self.status[command.dir].y * command.num< 0) {
+        if (self.seat.x + self.status[command.dir].x * command.num> self.count-1 || self.seat.x + self.status[command.dir].x * command.num < 0 || self.seat.y + self.status[command.dir].y * command.num > self.count-1 || self.seat.y + self.status[command.dir].y * command.num< 0) {
             console.log('无法移动到指定位置，请确认无误 ')
             return false;
         } else {

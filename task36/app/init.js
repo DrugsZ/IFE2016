@@ -32,6 +32,9 @@ var init = function () {
     oWrapperRight.className='right';
     var oDiv=document.createElement('div');
     oDiv.className='rowlist';
+    var oWrapper=document.createElement('div');
+    oWrapper.className='wrapper';
+    oDiv.appendChild(oWrapper);
     var oText = document.createElement('textarea');
     oWrapperRight.appendChild(oDiv);
     oWrapperRight.appendChild(oText);

@@ -4,20 +4,22 @@
 var CreateCar=require('./CreateCar.js');
 CreateCar.CreateNewCar();
 var textarea=document.querySelector('textarea');
-var rowList=document.querySelector('.rowlist');
+var rowList=document.querySelector('.wrapper');
 var value=textarea.value;
+var timer=null;
 var arr=value.split('\n');
 var execBtn=document.querySelector('#execute');
 var refreshBtn=document.querySelector('#refresh');
-refreshBtn.addEventListener('click',function(){
-    textarea.value='';
-    setRowList(0);
-},false);
+tTimer=setInterval(getData,500);
 execBtn.addEventListener('click',function(){
+
     execute();
 },false);
 textarea.addEventListener('keydown',function(){
     getData();
+},false);
+textarea.addEventListener('scroll',function(){
+    rowList.style.top=-textarea.scrollTop+'px';
 },false);
 var commandTest= {
     GO: /^go(\s+)?(\d+)?$/i,
@@ -26,6 +28,7 @@ var commandTest= {
 };
 
 function execute(){
+    clearInterval(timer);
     var i=0;
     arr=getData();
     timer=setInterval(function(){
@@ -38,6 +41,7 @@ function execute(){
 }
 function run(msg,i){
     var command=getCommand(msg,i);
+    var msg=msg.trim();
     if(!command){
         return false;
     }
@@ -102,7 +106,7 @@ function CreateCommand(){
     return command;
 }
 function setRowList(num){
-    var rowlist=document.querySelector('.rowlist');
+    var rowlist=document.querySelector('.wrapper');
     var i=rowlist.childNodes.length;
     var tempArr='';
     if(i==num){
@@ -122,6 +126,10 @@ function getData(){
 }
 //type:select,error
 function setColor(type,num){
+    if(num>27&&rowList.childNodes.length-num>27){
+        rowList.style.top=-rowList.childNodes[0].clientHeight*num+'px';
+        textarea.scrollTop=-(rowList.offsetTop);
+    }
     var arr=rowList.childNodes;
     for(var i=0;i<arr.length;i++){
         arr[i].className='';
