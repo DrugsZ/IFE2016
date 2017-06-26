@@ -4,6 +4,7 @@
     <list default="true" id="a23eeb94-750b-4c86-9419-8a9ff2e8a9c3" name="默认的" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/task36/app/CreateCar.js" afterPath="$PROJECT_DIR$/task36/app/CreateCar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/task36/app/command.js" afterPath="$PROJECT_DIR$/task36/app/command.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/task36/public/bundle.js" afterPath="$PROJECT_DIR$/task36/public/bundle.js" />
     </list>
     <list id="ac4b3779-a026-440d-bf8a-3c9f2013f8b7" name="New changelist" comment="" />
@@ -50,7 +51,7 @@
         <entry file="file://$PROJECT_DIR$/task36/app/command.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="86" column="49" selection-start-line="86" selection-start-column="49" selection-end-line="86" selection-end-column="49" />
+              <caret line="98" column="26" selection-start-line="98" selection-start-column="26" selection-end-line="98" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -69,10 +70,9 @@
       <file leaf-file-name="CreateCar.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/task36/app/CreateCar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.24094203">
-              <caret line="49" column="31" selection-start-line="49" selection-start-column="24" selection-end-line="49" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.44746378">
+              <caret line="141" column="37" selection-start-line="141" selection-start-column="37" selection-end-line="141" selection-end-column="37" />
               <folding>
-                <element signature="n#!!block;n#CreateCar#0" expanded="false" />
                 <element signature="e#539#1378#0" expanded="false" />
               </folding>
             </state>
@@ -123,8 +123,8 @@
         <option value="$PROJECT_DIR$/task35/public/bundle.js" />
         <option value="$PROJECT_DIR$/task35/app/command.js" />
         <option value="$PROJECT_DIR$/task36/app/init.js" />
-        <option value="$PROJECT_DIR$/task36/app/command.js" />
         <option value="$PROJECT_DIR$/task36/style.css" />
+        <option value="$PROJECT_DIR$/task36/app/command.js" />
         <option value="$PROJECT_DIR$/task36/app/CreateCar.js" />
       </list>
     </option>
@@ -410,7 +410,13 @@
       <option name="project" value="LOCAL" />
       <updated>1498446391671</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="..">
+      <created>1498446880264</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1498446880264</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -839,14 +845,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/task36/app/command.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="86" column="49" selection-start-line="86" selection-start-column="49" selection-end-line="86" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/task36/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.071429">
@@ -863,12 +861,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/task36/app/command.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="98" column="26" selection-start-line="98" selection-start-column="26" selection-end-line="98" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/task36/app/CreateCar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24094203">
-          <caret line="49" column="31" selection-start-line="49" selection-start-column="24" selection-end-line="49" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.44746378">
+          <caret line="141" column="37" selection-start-line="141" selection-start-column="37" selection-end-line="141" selection-end-column="37" />
           <folding>
-            <element signature="n#!!block;n#CreateCar#0" expanded="false" />
             <element signature="e#539#1378#0" expanded="false" />
           </folding>
         </state>

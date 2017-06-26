@@ -127,10 +127,10 @@ CreateCar.prototype.bru=function(color){
         if(command.dir==null){
             command.dir=direction;
         }
-        if (self.seat.x + self.status[command.dir].x * command.num> self.count-1 || self.seat.x + self.status[command.dir].x * command.num < 0 || self.seat.y + self.status[command.dir].y * command.num > self.count-1 || self.seat.y + self.status[command.dir].y * command.num< 0) {
-            console.log('无法移动到指定位置，请确认无误 ')
-            return false;
-        } else {
+        if((command.way=='GO'||command.way=='MOV'||command.way=='TRA')&&(self.seat.x + self.status[command.dir].x * command.num> self.count-1 || self.seat.x + self.status[command.dir].x * command.num < 0 || self.seat.y + self.status[command.dir].y * command.num > self.count-1 || self.seat.y + self.status[command.dir].y * command.num< 0)){
+                console.log('无法移动到指定位置，请确认无误 ')
+                return false;
+        }else {
             switch (command.way) {
                 case 'GO':
                     if(self.hasPane(self.seat.x + self.status[command.dir].x * command.num,self.seat.y + self.status[command.dir].y * command.num)){
@@ -158,6 +158,9 @@ CreateCar.prototype.bru=function(color){
                     break;
                 case 'BRU':
                     self.bru(command.color);
+                    break;
+                case 'TUN':
+                    self.turn(command.dir);
             }
             return true;
         }

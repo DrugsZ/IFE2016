@@ -29,7 +29,8 @@ var commandTest= {
     TRA: /^tra\s+(bac|lef|top|rig)(\s+)?(\w+)?$/i,
     MOV: /^mov\s+(bac|lef|top|rig)(\s+)?(\w+)?$/i,
     BUILD:/^build$/i,
-    BRU:/^bru\s+(.*)$/i
+    BRU:/^bru\s+(.*)$/i,
+    TUN:/^tun\s+(lef|bac|rig|top)$/i
 };
 
 function execute(){
@@ -93,6 +94,11 @@ function getCommand(msg,i){
         arr=msg.match(commandTest.BRU);
         command.way='BRU';
         command.color=arr[1];
+    }else if(msg.match(commandTest.TUN)){
+        var arr=msg.match(commandTest.TUN)
+        command.way='TUN';
+        command.dir=arr[arr.length-1];
+        command.num=1;
     }else{
             command=null
     }

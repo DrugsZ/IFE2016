@@ -157,7 +157,8 @@ var commandTest= {
     TRA: /^tra\s+(bac|lef|top|rig)(\s+)?(\w+)?$/i,
     MOV: /^mov\s+(bac|lef|top|rig)(\s+)?(\w+)?$/i,
     BUILD:/^build$/i,
-    BRU:/^bru\s+(.*)$/i
+    BRU:/^bru\s+(.*)$/i,
+    TUN:/^tun\s+(lef|bac|rig|top)$/i
 };
 
 function execute(){
@@ -221,6 +222,11 @@ function getCommand(msg,i){
         arr=msg.match(commandTest.BRU);
         command.way='BRU';
         command.color=arr[1];
+    }else if(msg.match(commandTest.TUN)){
+        var arr=msg.match(commandTest.TUN)
+        command.way='TUN';
+        command.dir=arr[arr.length-1];
+        command.num=1;
     }else{
             command=null
     }
@@ -415,10 +421,10 @@ CreateCar.prototype.bru=function(color){
         if(command.dir==null){
             command.dir=direction;
         }
-        if (self.seat.x + self.status[command.dir].x * command.num> self.count-1 || self.seat.x + self.status[command.dir].x * command.num < 0 || self.seat.y + self.status[command.dir].y * command.num > self.count-1 || self.seat.y + self.status[command.dir].y * command.num< 0) {
-            console.log('无法移动到指定位置，请确认无误 ')
-            return false;
-        } else {
+        if((command.way=='GO'||command.way=='MOV'||command.way=='TRA')&&(self.seat.x + self.status[command.dir].x * command.num> self.count-1 || self.seat.x + self.status[command.dir].x * command.num < 0 || self.seat.y + self.status[command.dir].y * command.num > self.count-1 || self.seat.y + self.status[command.dir].y * command.num< 0)){
+                console.log('无法移动到指定位置，请确认无误 ')
+                return false;
+        }else {
             switch (command.way) {
                 case 'GO':
                     if(self.hasPane(self.seat.x + self.status[command.dir].x * command.num,self.seat.y + self.status[command.dir].y * command.num)){
@@ -446,6 +452,9 @@ CreateCar.prototype.bru=function(color){
                     break;
                 case 'BRU':
                     self.bru(command.color);
+                    break;
+                case 'TUN':
+                    self.turn(command.dir);
             }
             return true;
         }
