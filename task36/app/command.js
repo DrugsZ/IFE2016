@@ -10,6 +10,9 @@ var timer=null;
 var arr=value.split('\n');
 var execBtn=document.querySelector('#execute');
 var refreshBtn=document.querySelector('#refresh');
+refreshBtn.addEventListener('click',function(){
+    textarea.value='';
+});
 tTimer=setInterval(getData,500);
 execBtn.addEventListener('click',function(){
 
@@ -24,7 +27,9 @@ textarea.addEventListener('scroll',function(){
 var commandTest= {
     GO: /^go(\s+)?(\d+)?$/i,
     TRA: /^tra\s+(bac|lef|top|rig)(\s+)?(\w+)?$/i,
-    MOV: /^mov\s+(bac|lef|top|rig)(\s+)?(\w+)?$/i
+    MOV: /^mov\s+(bac|lef|top|rig)(\s+)?(\w+)?$/i,
+    BUILD:/^build$/i,
+    BRU:/^bru\s+(.*)$/i
 };
 
 function execute(){
@@ -56,7 +61,7 @@ function run(msg,i){
 function getCommand(msg,i){
     var arr=[];
     var command={};
-    var msg=msg.toUpperCase();
+    var msg=msg.toUpperCase().trim();
     if(msg.match(commandTest.GO)){
         arr=msg.match(commandTest.GO);
         arr.shift();
@@ -81,8 +86,15 @@ function getCommand(msg,i){
         }else{
             command=CreateCommand('MOV',arr[0],1)
         }
-    }else {
-        command=null;
+    }else if(msg.match(commandTest.BUILD)){
+        command.way='BUILD';
+        command.num=1;
+    }else if(msg.match(commandTest.BRU)) {
+        arr=msg.match(commandTest.BRU);
+        command.way='BRU';
+        command.color=arr[1];
+    }else{
+            command=null
     }
     if(command==null){
         console.log('指令有误，请确认后重新操作');
