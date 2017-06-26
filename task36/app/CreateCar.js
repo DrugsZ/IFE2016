@@ -21,19 +21,6 @@
     }
 
     CreateCar.constructor = CreateCar;
-    CreateCar.prototype.getDirevtion = function () {
-        var deg = this.deg % 360;
-        if (deg === 0) {
-            this.direction = 'TOP'
-        } else if (deg === 90) {
-            self.direction = 'RIG';
-        } else if (deg === 180) {
-            self.direction = 'BAC';
-        } else if (deg === 270) {
-            self.direction = 'LEF'
-        }
-        return this.direction;
-    };
     CreateCar.prototype.GO = function (dir, n) {
         var x=self.seat.x+self.status[dir].x*n+1;
         var y=self.seat.y+self.status[dir].y*n+1;
@@ -136,7 +123,7 @@ CreateCar.prototype.bru=function(color){
     }
 }
     CreateCar.prototype.receive = function (command) {
-        var direction = self.getDirevtion();
+        var direction = self.getDirection();
         if(command.dir==null){
             command.dir=direction;
         }
